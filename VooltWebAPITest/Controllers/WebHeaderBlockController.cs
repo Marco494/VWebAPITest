@@ -33,7 +33,9 @@ namespace VooltWebAPITest.Controllers
 			// Save the data to the JSON file
 			SaveData(webpageData, "DefaultHeader");
 
-			return Ok();
+			//Serialize and return content
+			var json = JsonSerializer.Serialize(webpageData);
+			return Content(json.ToString(), "application/json");
 		}
 
 		[HttpPut]

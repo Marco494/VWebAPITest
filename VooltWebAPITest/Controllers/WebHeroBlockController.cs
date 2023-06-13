@@ -33,7 +33,9 @@ namespace VooltWebAPITest.Controllers
 			// Save the data to the JSON file
 			SaveData(webpageData, "DefaultHero");
 
-			return Ok();
+			//Serialize and return content
+			var json = JsonSerializer.Serialize(webpageData);
+			return Content(json.ToString(), "application/json");
 		}
 
 		[HttpPut]
@@ -63,7 +65,9 @@ namespace VooltWebAPITest.Controllers
 			// Save the updated data to the JSON file
 			SaveData(updateData, sectionID);
 
-			return Ok();
+			//Serialize and return content
+			var json = JsonSerializer.Serialize(updateData);
+			return Content(json.ToString(), "application/json");
 		}
 
 		[HttpDelete]

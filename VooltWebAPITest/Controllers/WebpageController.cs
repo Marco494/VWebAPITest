@@ -39,7 +39,6 @@ namespace VooltWebAPITest.Controllers
 			//Serialize and return content
 			var json = JsonSerializer.Serialize(webpageData);
 			return Content(json.ToString(), "application/json");
-
 		}
 
 		private Webpage WebpageData()
